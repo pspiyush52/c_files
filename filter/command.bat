@@ -1,0 +1,1 @@
+./filters -s ./images/courtyard.bmp courtyards.bmp
