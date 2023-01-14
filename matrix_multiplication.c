@@ -94,7 +94,7 @@ int main(void)
         int* ptr = malloc(col2 * sizeof(int));
         *(prod + i) = ptr;
     }
-    // Prod can then be used to return a pointer from a function if the purpose
+    // prod can then be used to return a pointer from a function if the purpose
     // is to return the result rather than displaying it
 
     // Initializing the rows of the matrix which will store the result for
