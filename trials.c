@@ -10,7 +10,7 @@ int main(void)
     printf("\nSizeof array: %d\n\n", n);
     for (int i=0; i<n; i++)
     {
-        printf("%d ", s[i]);
+        printf("%c ", s[i]);
         if (s[i] == '\0')
             printf("NULL");
         endl();
