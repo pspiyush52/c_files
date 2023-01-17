@@ -5,7 +5,7 @@
 #define N 50
 
 char* stcat(char* s1, char* s2);
-void strip(char* s);
+char* strip(char* s);
 
 int main(void)
 {
@@ -35,37 +35,17 @@ char* stcat(char* s1 ,char* s2)
     return st;
 }
 
-void strip(char* s)
+char* strip(char* s)
 {
-    int n = strlen(s), front = 0, j;
-    int rear = n;
-
-    // Skipping the whitespace and getting to the actual beginning of the
-    // string
-    while (s[front] == ' ' || s[front] == '\n' || s[front] == '\t' || s[front] == '\0')
-        front++;
-    
-    // Doing the same for the rear end of the string
-    while (s[rear] == ' ' || s[rear] == '\n' || s[rear] == '\t'|| s[rear] == '\0')
-        rear--;
-
-    // Calculating the amount of memory blocks required to store the
-    // whitespace free string
-    // '+2' is for the additional null character at the end of the string
-    n = rear - front + 2;
-    
-    // Allocating the required amount of memory
-    char* st = malloc(n * sizeof(char));
-
-    // Initializing the memory block with null values
-    for (int i=0; i<n; i++)
-        st[i] = 0;
-    
-    // Storing the characters one by one after skipping all the whitespace
-    // in a separate location
-    for (int i=0, j=front; j < rear+1; j++, i++)
-        st[i] = s[j];
-    st[n-1] = '\0';
-    // Writing the whitespace free string into the original string
-    strcpy(s, st);
+    char* d = s;
+    char* c = s;
+    while (*c != '\0')
+    {
+        if (*c == ' ' || *c == '\n' || *c == '\t')
+            c++;
+        else
+            *d++ = *c++;
+    }
+    *(d) = '\0';
+    return s;
 }
