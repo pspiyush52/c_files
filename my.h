@@ -38,4 +38,19 @@ int get_num(char* s)
     return x;
 }
 
+char* strip(char* s)
+{
+    char* d = s;
+    char* c = s;
+    while (*c != '\0')
+    {
+        if (*c == ' ' || *c == '\n' || *c == '\t')
+            c++;
+        else
+            *d++ = *c++;
+    }
+    *(d) = '\0';
+    return s;
+}
+
 #endif // MY_H_INCLUDED
