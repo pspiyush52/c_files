@@ -122,4 +122,26 @@ void sprint(char* s, int n)
     printf("\n\n");
 }
 
+void strlower(char* s)
+{
+    char* ptr = s;
+    while (*ptr != '\0')
+    {
+        if (*ptr > 64 && *ptr < 91)
+            *ptr += 32;
+        ptr++;
+    }
+}
+
+void strupper(char* s)
+{
+    char* ptr = s;
+    while (*ptr != '\0')
+    {
+        if (*ptr > 96 && *ptr < 123)
+            *ptr -= 32;
+        ptr++;
+    }
+}
+
 #endif // MY_H_INCLUDED

@@ -20,7 +20,6 @@ void swap(char* s)
 {
     int n = strlen(s) - 1;
     char ch;
-    char* ptr = s;
     for (int i=0, j=n; i < j; i++, j--)
     {
         ch = s[i];
