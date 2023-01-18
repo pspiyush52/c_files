@@ -8,28 +8,56 @@ char* strip(char* s);
 
 int main(void)
 {
-    char s[N];
-    printf("Enter your name: ");
-    fgets(s, N, stdin);
     system("cls");
+    char s[N];
+    printf("\n\tEnter your name: ");
+    fgets(s, N, stdin);
     strip(s);
+    printf("\n\t");
     if (isupper(s[0]))
         fputs(strcat(s, " Singh"), stdout);
     else
         fputs(strcat(s, " singh"), stdout);
+    printf("\n\n");
 }
 
 char* strip(char* s)
 {
-    char* d = s;
-    char* c = s;
-    while (*c != '\0')
+    char* front = s;
+    char* rear = s;
+    char* st = s;
+
+    // Traverse to where the string actually begins skipping all the
+    // whitespace along the way
+    while (*front == ' ' || *front == '\t' || *front == '\n')
+        front++;
+    // Traverse to the null character of the string
+    while (*rear != '\0')
+        rear++;
+
+    // Shifting one character to the left of the null character to actually
+    // begin eating up the whitespace
+    rear--;
+
+    // Getting the rear pointer to where the string actually ends skipping
+    // all the whitespace along the way
+    while (*rear == ' '|| *rear == '\t' || *rear == '\n')
+        rear--;
+    
+    // Begin replacing the characters of the string with the characters which
+    // start from the head of the string
+    while (front != rear)
     {
-        if (*c == ' ' || *c == '\n' || *c == '\t')
-            c++;
-        else
-            *d++ = *c++;
+        *st++ = *front++;
     }
-    *(d) = '\0';
+
+    // Since the loop stops when the front matches the rear so we have to
+    // manually add the last non-whitespace character to the string
+    *st = *rear;
+
+    // Terminating the string with the null character
+    *++st = '\0';
+
+    // Returning the string in case the return value is needed
     return s;
 }

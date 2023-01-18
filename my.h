@@ -52,16 +52,23 @@ unsigned int len(char* s)
 
 char* strip(char* s)
 {
-    char* d = s;
-    char* c = s;
-    while (*c != '\0')
+    char* front = s;
+    char* rear = s;
+    char* st = s;
+    while (*front == ' ' || *front == '\t')
+        front++;
+    while (*rear != '\0')
+        rear++;
+    rear--;
+    while (*rear == ' '|| *rear == '\t' || *rear == '\n')
+        rear--;
+
+    while (front != rear)
     {
-        if (*c == ' ' || *c == '\n' || *c == '\t')
-            c++;
-        else
-            *d++ = *c++;
+        *st++ = *front++;
     }
-    *(d) = '\0';
+    *st = *rear;
+    *++st = '\0';
     return s;
 }
 
