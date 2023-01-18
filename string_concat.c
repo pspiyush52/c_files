@@ -14,11 +14,12 @@ int main()
     printf("\tLength: %d\n\n", strlen(cs));
     printf("\tLength: %d\n\n", len(cs));
     printf("\tTerminating character: %d\n\n", cs[12]);
+    free(cs);
 }
 
 char* concat(char* s1, char* s2)
 {
-    int n1 = len(s1), n2 = len(s2), i;
+    int n1 = len(s1), n2 = len(s2);
     int new_len = n1 + n2 + 1;
     char* s = malloc(new_len * sizeof(char));
     char* ptr = s1;
