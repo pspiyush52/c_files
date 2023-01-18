@@ -8,8 +8,8 @@ unsigned int len(char* s);
 int main()
 {
     system("cls");
-    char s[30] = "Piyush ";
-    char* cs = concat(s, "Singh");
+    char s[] = "Niharika";
+    char* cs = concat(s, " Singh");
     printf("\tConcatenated string: %s\n\n", cs);
     printf("\tLength: %d\n\n", strlen(cs));
     printf("\tLength: %d\n\n", len(cs));

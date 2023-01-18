@@ -1,19 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <conio.h>
+#include "my.h"
 
 void endl();
 
 int main(void)
 {
-    char s[50];
-    // fgets(s, 50, stdin);
-    gets(s);
-    // fputs(s, stdout);
-    // printf("%s", s);
-    puts(s);
-    printf("--ENDL--");
+    system("cls");
+    char s[] = "pass";
+    sprint(s, 10);
 }
+
 
 void endl()
 {

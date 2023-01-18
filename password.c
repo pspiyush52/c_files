@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include "my.h"
-
 #define PASS "foo-bar"
 
 int checkpass(char* prompt, char* pass);
+int is_same(char* s1, char* s2);
+unsigned int len(char* s);
 
 int main(void)
 {
@@ -15,7 +15,6 @@ int main(void)
     else
         printf("\n\n\tIncorrect.\n\n");
 }
-
 
 int checkpass(char* prompt, char* pass)
 {
@@ -39,4 +38,34 @@ int checkpass(char* prompt, char* pass)
         return 1;
     
     return 0;
+}
+
+int is_same(char* s1, char* s2)
+{
+    unsigned int len1 = len(s1);
+    unsigned int len2 = len(s2);
+    if (len1 != len2)
+        return 0;
+    char* ptr1 = s1;
+    char* ptr2 = s2;
+    while (*ptr1 != '\0')
+    {
+        if (*ptr1 != *ptr2)
+            return 0;
+        ptr1++;
+        ptr2++;
+    }
+    return 1;
+}
+
+unsigned int len(char* s)
+{
+    char* ptr = s;
+    unsigned int count = 0;
+    while (*ptr != '\0')
+    {
+        ptr++;
+        count++;
+    }
+    return count;
 }
