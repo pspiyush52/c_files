@@ -4,6 +4,8 @@
 #include <conio.h>
 #include <string.h>
 
+char* strip(char* s);
+
 int get_int(char *text)
 {
     int num;
@@ -12,11 +14,12 @@ int get_int(char *text)
     return num;
 }
 
-char *get_string(char *text)
+char* get_string(char *text)
 {
-    char *str;
+    char* str = malloc(50 * sizeof(char));
     printf("%s", text);
-    gets(str);
+    fgets(str, 50, stdin);
+    strip(str);
     return str;
 }
 
@@ -116,9 +119,15 @@ int checkpass(char* prompt, char* pass)
 
 void sprint(char* s, int n)
 {
-    printf("\n");
     for (int i=0; i<n; i++)
         printf("\n\t<Value at index %d: %d>", i, s[i]);
+    printf("\n\n");
+}
+
+void iprint(int* arr, int n)
+{
+    for (int i=0; i<n; i++)
+        printf("\n\t<Value at index %d: %d>", i, *arr++);
     printf("\n\n");
 }
 
