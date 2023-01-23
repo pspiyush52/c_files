@@ -6,7 +6,7 @@
 
 char* strip(char* s);
 
-int get_int(char *text)
+int get_int(char* text)
 {
     int num;
     printf("%s", text);
@@ -14,11 +14,11 @@ int get_int(char *text)
     return num;
 }
 
-char* get_string(char *text)
+char* get_string(char* text)
 {
-    char* str = malloc(50 * sizeof(char));
+    static char str[100];
     printf("%s", text);
-    fgets(str, 50, stdin);
+    fgets(str, 100, stdin);
     strip(str);
     return str;
 }

@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "my.h"
+
+char* fun();
 
 int main()
 {
     system("cls");
-    int x = 45;
-    void* ptr = &x;
-    void* ptr = NULL;
-    for (int i=0; i<15; i++)
-        printf("%p\n", (char*)(ptr + i));
+    printf("\nHello, %s\n\n", get_string("Enter your name: "));
+}
+
+char* fun()
+{
+    static char s[] = "this_is_fun";
+    return s;
 }
