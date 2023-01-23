@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
 
 void print_hex(int x)
 {
-    int q, r, hd[2];
+    int q, r, hd[20];
     int i = 0;
     if (x < 16)
     {
@@ -49,14 +49,3 @@ void print_hex(int x)
         printf("%c", hex_nums[hd[j]]);
     }
 }
-
-
-
-
-
-
-
-
-
-
-

@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            char *KEY = argv[1];
+            char* KEY = argv[1];
             char ALPHABETS[] = "abcdefghijklmnopqrstuvwxyz";
 
             if (!(check_alpha(KEY) && check_rep(KEY)))
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 }
 
 
-int check_alpha(char key[])
+int check_alpha(char* key)
 {
     char ch;
     int flag = 1;
