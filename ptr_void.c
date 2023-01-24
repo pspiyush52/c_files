@@ -2,16 +2,21 @@
 #include <stdlib.h>
 #include "my.h"
 
-char* fun();
+void e();
 
 int main()
 {
     system("cls");
-    printf("\nHello, %s\n\n", get_string("Enter your name: "));
+    system("color 0a");
+    int n = 400000;
+    void* ptr = &n;
+    for (int i=0; i<4; i++)
+        printf("<Value at 0x%08x: %d>\n", ptr + i, *(char*)(ptr + i));
+    e();
+    printf("Integer value: %d\n\n", *(int*)ptr);
 }
 
-char* fun()
+void e()
 {
-    static char s[] = "this_is_fun";
-    return s;
+    printf("\n");
 }
