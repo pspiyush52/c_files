@@ -2,9 +2,15 @@
 #include <stdlib.h>
 #include "my.h"
 
+void sum(void);
+
 int main()
 {
-    char* s = get_string("Enter your name: ");
-    strip(s);
-    printf("\nHello, %s\n\n", s);
+    sum();
+    printf("\n");
+}
+
+void sum()
+{
+    printf("Sum hai.");
 }

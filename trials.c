@@ -3,15 +3,22 @@
 #include <string.h>
 #include "my.h"
 
-void endl();
+void _strlower(char*);
 
-int main(void)
+int main()
 {
     system("cls");
-    char s[] = "main.py";
+    char s[] = "AlPInet";
+    _strlower(s);
+    printf("%s\n", s);
 }
 
-void endl()
+void _strlower(char* s)
 {
-    printf("\n");
+    while (*s != '\0')
+    {
+        if (*s < 123 && *s > 96)
+            *s -= 32;
+        s++;
+    }
 }
