@@ -4,4 +4,5 @@
 int main(void)
 {
     int n=5;
+    printf("Mac: %d", n);
 }
