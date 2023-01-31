@@ -3,6 +3,10 @@
         "cstdlib": "c",
         "typeinfo": "c",
         "stdio.h": "c",
-        "my.h": "c"
+        "my.h": "c",
+        "cstdio": "c",
+        "stdint.h": "c",
+        "stdint-gcc.h": "c",
+        "time.h": "c"
     }
 }
