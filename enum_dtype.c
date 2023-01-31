@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void showday(char*);
+void showday(const char*);
 
 typedef enum days {
     sun = 1,
@@ -14,11 +14,12 @@ typedef enum days {
 
 int main(void)
 {
+    printf("Days: ");
     for (days d = sun; d <= sat; d++)
-        printf("Day: %d\n", d);
+        printf("\t%d", d);
     
     days d;
-    printf("Enter the day number: ");
+    printf("\nEnter the day number: ");
     scanf("%d", &d);
     switch (d)
     {
@@ -40,7 +41,7 @@ int main(void)
     }
 }
 
-void showday(char* day)
+void showday(const char* day)
 {
     printf("It is %s", day);
 }
