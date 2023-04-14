@@ -8,7 +8,6 @@ char* strip(char* s);
 
 int main(void)
 {
-    system("cls");
     char s[N];
     printf("\n\tEnter your name: ");
     fgets(s, N, stdin);

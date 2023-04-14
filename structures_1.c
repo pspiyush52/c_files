@@ -19,7 +19,7 @@ student get_student(const char*, int, const char*, const char*);
 int main(void)
 {
     student niharika = get_student("Niharika Joshi", 1, "Sashi Chandra Joshi", "Deepa Devi Joshi");
-    // displatying the details using the function pointer which is a member of the
+    // displaying the details using the function pointer which is a member of the
     // structure student
     (*niharika.show)(niharika);
     printf("\n");
