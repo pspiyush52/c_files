@@ -1,5 +1,6 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
+#include <conio.h>
 
 int main()
 {
@@ -8,16 +9,11 @@ int main()
     scanf("%c", &ch);
     printf("\n\nThe ASCII value of %c is: %d\n\n", ch, ch);
 
-    int column = 0;
-    for(int i=20; i<127; i++)
+    for(int i = 20, column = 1; i < 127; i++, column++)
     {
         printf(" %d = %c  ", i, i);
-        column++;
-        if(column>5)
-        {
+        if(column % 5 == 0)
             printf("\n");
-            column = 0;
-        }
     }
     printf("\n");
     getch();
